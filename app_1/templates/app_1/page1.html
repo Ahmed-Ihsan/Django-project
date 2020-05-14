@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'page1/style.css'}">
+  </head>
+  <body>
+    <h1>ahmed</h1>
+    <ul>
+      {% for data_ in data %}
+      <li>
+        {{ data_ }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
