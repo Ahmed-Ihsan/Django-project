@@ -6,7 +6,6 @@ from app_1 import forms
 
 def for_user(request):
 	all_user=models.User.objects.all()
-
 	context={
 		'data':all_user
 	}
@@ -17,8 +16,14 @@ def for_img(request):
 		context={
 			'all_post':all_post
 		}
-
 		return render(request,'app_1/page2.html',context)
+
+def id_user(request ,id):
+		all_post=models.User.objects.filter(id=id)
+		context={
+			'all_post':all_post
+		}
+		return render(request,'app_1/page4.html',context)
 
 def input_post(request):
 	data=forms.input_post(request.POST or None)
@@ -32,7 +37,6 @@ def input_post(request):
 	context={
 		'formdata':data
 	}
-
 	return render(request,'app_1/page3.html',context)
 
 def input_user(request):
@@ -47,5 +51,4 @@ def input_user(request):
 	context={
 		'formdata':data
 	}
-
 	return render(request,'app_1/page3.html',context)

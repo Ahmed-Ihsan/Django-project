@@ -20,4 +20,4 @@ class img(models.Model):
     title=models.CharField(max_length=15)
     text=models.TextField(default=" ")
     many=models.IntegerField(default=0)
-    img= models.ImageField(upload_to='app_1/images/')
+    img= models.ImageField(upload_to='images/')

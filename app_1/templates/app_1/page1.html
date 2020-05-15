@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <title></title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'page1/style.css'}">
+    <link rel="stylesheet" href="static/page1/style.css">
   </head>
   <body>
     <h1>ahmed</h1>
     <ul>
       {% for data_ in data %}
       <li>
-        {{ data_ }}
+        <a href="{% url "id_us" data_.id %}">{{ data_.first_name }}</a>
       </li>
       {% endfor %}
     </ul>
+
   </body>
 </html>
