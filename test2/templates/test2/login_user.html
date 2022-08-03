@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<form accept="\" method="POST">
+    {% csrf_token%}
+    <label>User Name</label>
+    <input type="text" name="username" placeholder="User Name">
+    <label>Pasword</label>
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="submit">
+</form>
+
+<h1><a href="{% url 'sinup_user' %}">SinUP</a></h1>
+{% endblock content %}

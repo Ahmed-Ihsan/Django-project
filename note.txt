@@ -1,0 +1,2 @@
+1- django-admin startproject myproject 
+2- python manage.py runserver

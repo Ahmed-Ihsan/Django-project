@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<style>
+ table ,th, td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid;
+}; 
+</style>
+
+<div>
+<a href="{% url 'home'%}?q={{i}}"><h1>home</h1></a>
+<h3><a href="{% url 'log_out' %}">logout</a></h3>
+<h3>User : {{request.user}}</h3>
+
+<form accept="{% url 'home'%}" method="GET">
+  {% csrf_token%}
+  <input type="text" name="q" placeholder="search...">
+</form>
+
+<a href="/input_item">add item</a>
+<a href="/input_sales">add sales</a>
+
+<h2>conter iteam :{{conter_iteam}}</h2>
+<table>
+    <tr>
+      <th>name</th>
+      <th>cost</th>
+      <th>number</th>
+      <th>totel cost</th>
+      <th>date</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+     {% for i ,j in item %}
+     <tr>
+        <td>{{i}}</td>
+        <td>{{i.cost}}</td>
+        <td>{{i.number}}</td>
+        <td>{{j}}</td>
+        <td>{{i.create}}</td>
+        <td><a href="{% url 'update_item' i.id %}">Edit</a></td>
+        <td><a href="{% url 'delete_item' i.id %}">Delete</a></td>
+        <td><a href="{% url 'home'%}?q={{i}}">search</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+    <hr>
+    <hr>
+
+  <h2>conter sales :{{conter_sales}}</h2>
+<table>
+    <tr>
+      <th>name</th>
+      <th>cost</th>
+      <th>number</th>
+      <th>totel cost</th>
+      <th>date</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+     {% for i ,j in sales %}
+     <tr>
+        <td>{{i}}</td>
+        <td>{{i.cost}}</td>
+        <td>{{i.number}}</td>
+        <td>{{j}}</td>
+        <td>{{i.create}}</td>
+        <td><a href="{% url 'update_sales' i.id %}">Edit</a></td>
+        <td><a href="{% url 'delete_sales' i.id %}">Delete</a></td>
+        <td><a href="{% url 'home'%}?q={{i}}">search</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock content %}

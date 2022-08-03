@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+<a href="/input_item">add item</a>
+<a href="/input_sales">add sales</a>
+{% block content %}
+<h1>list</h1>
+<a>{{name}}</a>
+<a>{{name.cost}}</a>
+<a>{{name.number}}</a>
+<a>{{name.note}}</a>
+{% endblock  %}
