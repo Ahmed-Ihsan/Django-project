@@ -1,0 +1,18 @@
+<!-- frontend/templates/invoices_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Invoices List</h1>
+    <ul>
+        {% for invoice in invoices %}
+            <li>
+                <strong>ID:</strong> {{ invoice.invoice_id }}<br>
+                <strong>Patient:</strong> {{ invoice.patient }}<br>
+                <strong>Appointment:</strong> {{ invoice.appointment }}<br>
+                <strong>Date:</strong> {{ invoice.invoice_date }}<br>
+                <strong>Amount:</strong> {{ invoice.amount }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

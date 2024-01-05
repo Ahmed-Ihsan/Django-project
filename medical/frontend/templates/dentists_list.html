@@ -1,0 +1,19 @@
+<!-- frontend/templates/dentists_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Dentists List</h1>
+    <ul>
+        {% for dentist in dentists %}
+            <li>
+                <strong>ID:</strong> {{ dentist.dentist_id }}<br>
+                <strong>Name:</strong> {{ dentist.first_name }} {{ dentist.last_name }}<br>
+                <strong>Specialization:</strong> {{ dentist.specialization }}<br>
+                <strong>Contact Number:</strong> {{ dentist.contact_number }}<br>
+                <strong>Email:</strong> {{ dentist.email }}<br>
+                <strong>Clinic Address:</strong> {{ dentist.clinic_address }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

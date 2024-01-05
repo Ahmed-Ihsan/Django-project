@@ -1,0 +1,19 @@
+<!-- frontend/templates/appointments_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Appointments List</h1>
+    <ul>
+        {% for appointment in appointments %}
+            <li>
+                <strong>ID:</strong> {{ appointment.appointment_id }}<br>
+                <strong>Patient:</strong> {{ appointment.patient }}<br>
+                <strong>Date:</strong> {{ appointment.appointment_date }}<br>
+                <strong>Time:</strong> {{ appointment.appointment_time }}<br>
+                <strong>Dentist:</strong> {{ appointment.dentist }}<br>
+                <strong>Notes:</strong> {{ appointment.notes }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

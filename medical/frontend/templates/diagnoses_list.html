@@ -1,0 +1,18 @@
+<!-- frontend/templates/diagnoses_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Diagnoses List</h1>
+    <ul>
+        {% for diagnosis in diagnoses %}
+            <li>
+                <strong>ID:</strong> {{ diagnosis.diagnosis_id }}<br>
+                <strong>Patient:</strong> {{ diagnosis.patient }}<br>
+                <strong>Date:</strong> {{ diagnosis.diagnosis_date }}<br>
+                <strong>Description:</strong> {{ diagnosis.description }}<br>
+                <strong>Treatment Plan:</strong> {{ diagnosis.treatment_plan }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
